@@ -94,7 +94,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="54dp"
-        android:background="@drawable/button_border"
+        android:background="@drawable/button_border_fill"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

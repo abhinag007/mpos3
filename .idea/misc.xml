@@ -3,14 +3,42 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/mpos/app/src/main/res/drawable/add_team.xml" value="0.1385" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/bell_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/button_border.xml" value="0.148" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/button_border_fill.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/color_cursor.xml" value="0.148" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/domain_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/edit_text_border.xml" value="0.148" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/forward_icon.xml" value="0.1385" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/home_icon.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.136" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_img.xml" value="0.179" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_link.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_menu_camera.xml" value="0.122" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.122" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_person.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_wallet.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/invite_box.xml" value="0.12" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/person_icon.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/white_box.xml" value="0.179" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.28553770086526575" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_navigation.xml" value="0.22" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/mpos/app/src/main/res/layout/app_bar_navigation.xml" value="0.2" />
+        <entry key="..\:/mpos/app/src/main/res/layout/content_navigation.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_gallery.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_slideshow.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/layout/nav_header_navigation.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/menu/action_bar.xml" value="0.25" />
+        <entry key="..\:/mpos/app/src/main/res/menu/activity_main_drawer.xml" value="0.125" />
+        <entry key="..\:/mpos/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.27291666666666664" />
+        <entry key="..\:/mpos/app/src/main/res/menu/bottom_menu.xml" value="0.33" />
+        <entry key="..\:/mpos/app/src/main/res/menu/navigation.xml" value="0.33" />
       </map>
     </option>
   </component>
