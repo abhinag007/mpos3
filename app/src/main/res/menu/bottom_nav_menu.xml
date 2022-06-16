@@ -15,6 +15,12 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/paymb_button"
+        android:icon="@drawable/paymb_button"
+        android:title="TODO"
+        app:showAsAction="always"/>
+
+    <item
         android:id="@+id/business_details"
         android:title="Business Details"
         android:icon="@drawable/domain_icon"
