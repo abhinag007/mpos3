@@ -25,6 +25,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_person.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_wallet.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/invite_box.xml" value="0.12" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/paying_curve_shape.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/paymb_button.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/person_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.1355" />
@@ -32,6 +33,7 @@
         <entry key="..\:/mpos/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.2787456445993031" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_navigation.xml" value="0.22" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_paying.xml" value="0.2" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_signup.xml" value="0.22" />
         <entry key="..\:/mpos/app/src/main/res/layout/app_bar_navigation.xml" value="0.2" />
         <entry key="..\:/mpos/app/src/main/res/layout/content_navigation.xml" value="0.27291666666666664" />
