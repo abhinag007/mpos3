@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.tech.mpos">
 
-    <uses-permission android:name="android.permission.NFC" />
+<!--    <uses-permission android:name="android.permission.NFC" />-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-feature android:name="android.hardware.nfc" />
+<!--    <uses-feature android:name="android.hardware.nfc" />-->
 
     <application
         android:allowBackup="true"
@@ -22,23 +22,24 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Mpos"
+        android:requestLegacyExternalStorage="true"
         tools:targetApi="31">
         <activity
             android:name=".nfcService.NfcActivity"
             android:theme="@style/Theme.Mpos.greenActionBar"
             android:exported="true">
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Mpos.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.Mpos.NoActionBar">
         </activity>
         <activity
             android:name=".SignupActivity"

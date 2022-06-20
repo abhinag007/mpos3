@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.setTitle("")
 
-        val firstFragment=FirstFragment()
+//        val firstFragment=FirstFragment()
+//        setCurrentFragment(firstFragment)
+        val firstFragment=AccountFragment()
         setCurrentFragment(firstFragment)
 
     }

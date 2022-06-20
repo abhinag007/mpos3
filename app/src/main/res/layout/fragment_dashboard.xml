@@ -4,7 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/baground"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="430dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/dashboard_curve"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/welcome_name_tv"
@@ -12,26 +24,25 @@
         android:layout_height="wrap_content"
         android:text="Welcome Abhi"
         android:textColor="@color/black"
-        android:textSize="18dp"
+        android:textSize="22dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.022" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="173dp"
         android:layout_height="63dp"
-        android:background="@color/white"
+        android:background="@color/secondary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100">
+        app:layout_constraintVertical_bias="0.099">
 
 
         <AutoCompleteTextView
@@ -49,16 +60,15 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="492dp"
         android:text="CAD 9"
         android:textColor="@color/black"
         android:textSize="42dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/welcome_name_tv"
-        app:layout_constraintVertical_bias="2.0" />
+        app:layout_constraintVertical_bias="0.69" />
 
     <TextView
         android:id="@+id/textView5"
@@ -69,28 +79,27 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.051" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.486">
+        app:layout_constraintVertical_bias="0.496">
 
         <LinearLayout
             android:id="@+id/tap_box_ll"
             android:layout_width="100dp"
             android:layout_height="96dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             android:background="@drawable/white_box"
             android:elevation="6dp"
             android:gravity="center_horizontal"
@@ -126,6 +135,7 @@
             android:layout_width="100dp"
             android:layout_height="96dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             android:background="@drawable/white_box"
             android:elevation="6dp"
             android:gravity="center_horizontal"
@@ -161,6 +171,7 @@
             android:layout_width="100dp"
             android:layout_height="96dp"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             android:background="@drawable/white_box"
             android:elevation="6dp"
             android:gravity="center_horizontal"
@@ -201,7 +212,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.630">
+        app:layout_constraintVertical_bias="0.650">
 
         <TextView
             android:layout_width="wrap_content"
@@ -293,6 +304,8 @@
             app:layout_constraintVertical_bias="0.515" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

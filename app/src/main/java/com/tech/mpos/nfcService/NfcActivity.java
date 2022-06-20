@@ -33,8 +33,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.security.InvalidAlgorithmParameterException;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -65,10 +72,29 @@ public class NfcActivity extends Activity implements CtlessCardService.ResultLis
         setContentView(R.layout.activity_paying);
 
 //        llContainer = findViewById(R.id.ctless_container);
+        Log.d("step","3");
 
-        mCtlessCardService = new CtlessCardService(this, this); // test
+        Encrypt encrypt = new Encrypt("111",1,"Visa","01", "24","929292929299292");
+
+        try {
+            encrypt.encrypt();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        } catch (NoSuchPaddingException e) {
+            e.printStackTrace();
+        } catch (InvalidAlgorithmParameterException e) {
+            e.printStackTrace();
+        } catch (InvalidKeyException e) {
+            e.printStackTrace();
+        } catch (IllegalBlockSizeException e) {
+            e.printStackTrace();
+        } catch (BadPaddingException e) {
+            e.printStackTrace();
+        }
+//        mCtlessCardService = new CtlessCardService(this, this); // test
         Log.d("step","2");
-
 
 
     }
@@ -79,7 +105,7 @@ public class NfcActivity extends Activity implements CtlessCardService.ResultLis
         super.onResume();
 //        Log.d("step","3");
 //        if(MainActivity.cvv!="0") {
-            mCtlessCardService.start();
+//            mCtlessCardService.start();
 //        }
     }
 

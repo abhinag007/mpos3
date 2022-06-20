@@ -10,6 +10,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/button_border.xml" value="0.148" />
         <entry key="..\:/mpos/app/src/main/res/drawable/button_border_fill.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/color_cursor.xml" value="0.148" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/dashboard_curve.xml" value="0.2" />
         <entry key="..\:/mpos/app/src/main/res/drawable/domain_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/dropdown_item.xml" value="0.1345" />
         <entry key="..\:/mpos/app/src/main/res/drawable/edit_text_border.xml" value="0.148" />
@@ -25,20 +26,22 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_person.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_wallet.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/invite_box.xml" value="0.12" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/name_initial_circle_baground.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/paying_curve_shape.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/paymb_button.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/person_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/white_box.xml" value="0.179" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_login.xml" value="0.20416666666666666" />
-        <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.2787456445993031" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.16" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_navigation.xml" value="0.22" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_paying.xml" value="0.2" />
-        <entry key="..\:/mpos/app/src/main/res/layout/activity_signup.xml" value="0.22" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_signup.xml" value="0.1" />
         <entry key="..\:/mpos/app/src/main/res/layout/app_bar_navigation.xml" value="0.2" />
         <entry key="..\:/mpos/app/src/main/res/layout/content_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/layout/dropdown_item.xml" value="0.67" />
-        <entry key="..\:/mpos/app/src/main/res/layout/fragment_dashboard.xml" value="0.1" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_account.xml" value="0.22" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_gallery.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_home.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_slideshow.xml" value="0.27291666666666664" />
