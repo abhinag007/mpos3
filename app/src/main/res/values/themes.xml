@@ -20,6 +20,8 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/secondary</item>
         <item name="colorPrimaryVariant">@color/grey</item>
+        <item name="colorControlActivated">@color/primary</item>
+
         <item name="colorOnPrimary">@color/white</item>
         <item name="android:textColor">@color/black</item>
         <!-- Secondary brand color. -->

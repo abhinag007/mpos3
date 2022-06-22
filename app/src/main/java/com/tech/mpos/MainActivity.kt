@@ -1,6 +1,5 @@
 package com.tech.mpos
 
-import FirstFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -13,11 +12,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.setTitle("")
+        supportActionBar?.title = ""
 
 //        val firstFragment=FirstFragment()
 //        setCurrentFragment(firstFragment)
-        val firstFragment=AccountFragment()
+        val firstFragment=WalletTransactionFragment()
         setCurrentFragment(firstFragment)
 
     }
