@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
 //        val firstFragment=FirstFragment()
 //        setCurrentFragment(firstFragment)
-        val firstFragment=WalletTransactionFragment()
+        val firstFragment=PaymentSetupFragment()
         setCurrentFragment(firstFragment)
 
     }

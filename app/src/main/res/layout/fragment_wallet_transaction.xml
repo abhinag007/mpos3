@@ -36,7 +36,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:text="100 CAD"
         android:textColor="@color/white"
@@ -60,16 +60,58 @@
         android:id="@+id/uniqueIdText_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="80dp"
         android:text="Unique ID"
+        android:textColor="@color/grey"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1728126282736"
+        android:textColor="@color/grey"
+        android:textStyle="bold"
+        android:layout_marginStart="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uniqueIdText_tv"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/recentTransaction_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Recent Transactions"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.015"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfTransactions_rv"
+        android:layout_width="379dp"
+        android:layout_height="304dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentTransaction_tv"
+        app:layout_constraintVertical_bias="0.805">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
