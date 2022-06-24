@@ -15,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = ""
 
-        val firstFragment=FirstFragment()
-        setCurrentFragment(firstFragment)
-//        val firstFragment=PaymentSetupFragment()
+//        val firstFragment=FirstFragment()
 //        setCurrentFragment(firstFragment)
+        val firstFragment=RecentTransactionFragment()
+        setCurrentFragment(firstFragment)
 
     }
     private fun setCurrentFragment(fragment: Fragment)=
