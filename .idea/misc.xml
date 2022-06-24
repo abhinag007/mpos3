@@ -65,10 +65,27 @@
         <entry key="..\:/mpos/app/src/main/res/menu/bottom_menu.xml" value="0.33" />
         <entry key="..\:/mpos/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
         <entry key="..\:/mpos/app/src/main/res/menu/navigation.xml" value="0.33" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/drawable/button_border.xml" value="0.105" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/drawable/button_border_fill.xml" value="0.105" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/drawable/cursor_color.xml" value="0.105" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/drawable/dashboard_curve.xml" value="0.1285" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/drawable/paying_curve_shape.xml" value="0.105" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout-land/activity_recent_transaction.xml" value="0.2947916666666667" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_login.xml" value="0.22" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_paying.xml" value="0.10666666666666667" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_recent_transaction.xml" value="0.16666666666666666" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_signup.xml" value="0.17552083333333332" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/dropdown_item.xml" value="0.17552083333333332" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_account.xml" value="0.17552083333333332" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_business_details.xml" value="0.16666666666666666" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_dashboard.xml" value="0.16666666666666666" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_payment_setup.xml" value="0.13333333333333333" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.17552083333333332" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

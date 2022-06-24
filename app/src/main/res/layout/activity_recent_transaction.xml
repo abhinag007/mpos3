@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baground"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="412dp"
+        android:layout_height="470dp"
+        android:src="@drawable/dashboard_curve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/transactionDetails_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:text="Transaction Details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+    <ImageView
+        android:id="@+id/circleColor_iv"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/transactionDetails_tv"
+        app:layout_constraintStart_toStartOf="@+id/transactionDetails_tv"
+        app:layout_constraintTop_toBottomOf="@+id/transactionDetails_tv"
+        app:srcCompat="@drawable/paying_curve_shape" />
+
+    <ImageView
+        android:id="@+id/statusIcon_iv"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/circleColor_iv"
+        app:layout_constraintEnd_toEndOf="@+id/circleColor_iv"
+        app:layout_constraintStart_toStartOf="@+id/circleColor_iv"
+        app:layout_constraintTop_toTopOf="@+id/circleColor_iv"
+        app:srcCompat="@drawable/check_icon" />
+
+    <TextView
+        android:id="@+id/statusText_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Success"
+        android:textColor="@color/primary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/circleColor_iv"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/circleColor_iv"
+        app:layout_constraintTop_toBottomOf="@+id/circleColor_iv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

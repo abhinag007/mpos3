@@ -6,7 +6,7 @@
     <item
         android:bottom="40dp"
         android:left="-200dp"
-        android:right="-200dp"
+        android:right="-150dp"
         android:top="-80dp">
         <shape android:shape="oval">
             <solid android:color="@color/secondary" />

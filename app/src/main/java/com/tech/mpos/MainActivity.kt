@@ -1,5 +1,6 @@
 package com.tech.mpos
 
+import FirstFragment
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -14,10 +15,10 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = ""
 
-//        val firstFragment=FirstFragment()
-//        setCurrentFragment(firstFragment)
-        val firstFragment=PaymentSetupFragment()
+        val firstFragment=FirstFragment()
         setCurrentFragment(firstFragment)
+//        val firstFragment=PaymentSetupFragment()
+//        setCurrentFragment(firstFragment)
 
     }
     private fun setCurrentFragment(fragment: Fragment)=
