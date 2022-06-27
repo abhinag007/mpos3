@@ -4,12 +4,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import com.tech.mpos.MainActivity
+import com.tech.mpos.PaymentSetupFragment
 import com.tech.mpos.R
 import com.tech.mpos.databinding.FragmentDashboardBinding
+
 
 class FirstFragment:Fragment(R.layout.fragment_dashboard) {
      private var _binding: FragmentDashboardBinding?=null
      private val binding get() = _binding!!
+    private val paymentSetupFragment= PaymentSetupFragment()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
+
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,6 +32,10 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         val volume = resources.getStringArray(R.array.volume)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, volume)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
+
+        binding.tapBoxLl.setOnClickListener {
+            (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)
+        }
 
         return binding.root
     }

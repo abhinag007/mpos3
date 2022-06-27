@@ -5,30 +5,26 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/home_icon"
-        android:title="Home"
-        app:showAsAction="always" />
+        android:title="Home"/>
 
     <item
         android:id="@+id/person"
-        android:title="Profile"
         android:icon="@drawable/account_person"
-        app:showAsAction="always" />
+        android:title="Profile"/>
 
     <item
         android:id="@+id/paymb_button"
         android:icon="@drawable/paymb_button"
-        android:title="TODO"
-        app:showAsAction="always"/>
+        android:title="Pay Button" />
 
     <item
         android:id="@+id/business_details"
-        android:title="Business Details"
         android:icon="@drawable/domain_icon"
-        app:showAsAction="always" />
+        android:title="Business Details"/>
     <item
         android:id="@+id/wallet"
-        android:title="Wallet"
         android:icon="@drawable/ic_wallet"
-        app:showAsAction="always" />
+        android:title="Wallet" />
+
 
 </menu>
