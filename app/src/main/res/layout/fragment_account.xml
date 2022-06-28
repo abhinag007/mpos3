@@ -32,7 +32,7 @@
         android:id="@+id/nameInitials_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="H"
+        android:text=""
         android:textSize="40dp"
         android:textStyle="bold"
         android:textColor="@color/white"
@@ -46,7 +46,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Harley Davidson"
+        android:text=""
         android:textSize="20sp"
         android:textColor="@color/black"
         android:textStyle="bold"
@@ -138,6 +138,7 @@
         app:layout_constraintTop_toBottomOf="@+id/radioGroup">
 
         <CheckBox
+            android:id="@+id/email_cb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:buttonTint="@color/primary"

@@ -4,11 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
+
 
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
@@ -32,78 +33,70 @@ class PaymentSetupFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        var tax:Double = 0.0
+        var totalAmount: Double = 0.0
         _binding = FragmentPaymentSetupBinding.inflate(inflater, container, false)
+        binding.nameInitialsTv.setText(MainActivity.responseBody.body()?.data?.businessName?.get(0)?.toUpperCase().toString())
+        binding.businessNameTv.setText(MainActivity.responseBody.body()?.data?.businessName)
         binding.proceedButtonBtn.setOnClickListener {
             val intent = Intent (getActivity(), PayingActivity::class.java)
-            getActivity()?.startActivity(intent)
+            intent.putExtra("totalAmount",totalAmount.toString())
+            startActivity(intent)
         }
-//        val amount = binding.inputAmountTil.editText?.text.toString()
-//        val tax = binding.inputTaxTil.editText?.text.toString()
-//        binding.totalAmountUpdateTv.text = "amount+tax"
+
 
         binding.inputAmountTil.editText?.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                if(count ==0){
-                    binding.totalAmountUpdateTv.text = "CAD 0.0"
-                }
-                binding.totalAmountUpdateTv.text = s.toString()
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(count ==0){
-                    binding.totalAmountUpdateTv.text = "CAD 0.0"
-                }
-                binding.totalAmountUpdateTv.text = s.toString()
+
             }
 
             override fun afterTextChanged(s: Editable?) {
+                if (binding.inputTaxTil.editText?.text.toString().equals(""))
+                    tax =  0.0
 
-                binding.totalAmountUpdateTv.text = s.toString()
+                else
+                    tax = binding.inputTaxTil.editText?.text.toString().toDouble()
+
+                if(s.toString().equals(""))
+                    amount = 0.0
+                else
+                    amount = s.toString().toDouble();
+                totalAmount = amount + (amount * tax * 0.01)
+
+                binding.totalAmountUpdateTv.text = "CAD $totalAmount"
             }
 
         })
 
-        var tax:String
+
         binding.inputTaxTil.editText?.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                if(count ==0){
-                    binding.totalAmountUpdateTv.text = "CAD 0.0"
-                }
-                tax=  s.toString()
-                binding.totalAmountUpdateTv.text = tax
-
-//                binding.totalAmountUpdateTv.text = (amount + (amount*s.toString().toDouble()*0.01)).toString()
-            }
+           }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                tax=  s.toString()
 
-                if((tax.toDouble()*10).toString().equals("")){
-                    binding.totalAmountUpdateTv.text = "CAD 0.0"
-                }
-                binding.totalAmountUpdateTv.text = (tax.toDouble()*10).toString()
             }
 
             override fun afterTextChanged(s: Editable?) {
-                tax=  s.toString()
-                binding.totalAmountUpdateTv.text = tax
+
+                if (s.toString().equals(""))
+                    tax =  0.0
+
+                else
+                    tax = s.toString().toDouble()
+
+                totalAmount = amount + (amount * tax * 0.01)
+                binding.totalAmountUpdateTv.setText("CAD $totalAmount")
+
             }
 
         })
         return binding.root
     }
-
-
-/*    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PaymentSetupFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }*/
 
 }

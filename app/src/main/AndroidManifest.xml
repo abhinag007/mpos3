@@ -32,6 +32,16 @@
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Mpos.NoActionBar">
+          <!--  <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Mpos.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,13 +49,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignupActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Mpos.NoActionBar" />
-        <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Mpos.NoActionBar" />
+            android:exported="true"
+            android:theme="@style/Theme.Mpos.NoActionBar" >
+
+        </activity>
         <activity
             android:name=".PayingActivity"
             android:exported="true"

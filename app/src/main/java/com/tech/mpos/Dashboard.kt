@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity
+import com.tech.mpos.MainActivity.Companion.responseBody
 import com.tech.mpos.PaymentSetupFragment
 import com.tech.mpos.R
 import com.tech.mpos.databinding.FragmentDashboardBinding
@@ -20,9 +21,6 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
     }
 
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,7 +30,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         val volume = resources.getStringArray(R.array.volume)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, volume)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
-
+        binding.welcomeNameTv.text = "Welcome ${responseBody.body()?.data?.businessName}"
         binding.tapBoxLl.setOnClickListener {
             (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)
         }

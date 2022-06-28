@@ -72,10 +72,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/uniqueID_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1728126282736"
+        android:text=""
         android:textColor="@color/grey"
         android:textStyle="bold"
         android:layout_marginStart="28dp"
