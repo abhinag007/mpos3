@@ -1,12 +1,21 @@
 package com.tech.mpos
 
 import FirstFragment
+import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.FileObserver.ACCESS
+import android.util.Log
 import android.view.Menu
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tech.mpos.apiServices.ApiInterface
+import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.loginResponse.LoginResponse
+import com.tech.mpos.transactionResponse.TransactionResponse
+import retrofit2.Call
+import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
@@ -18,9 +27,14 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         lateinit var responseBody: Response<LoginResponse>
+        lateinit var transactionData: Response<TransactionResponse>
+        lateinit var ACCESS_TOKEN: String
     }
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+//        getTransactionData()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         replaceFragment(homeFragment)
@@ -43,10 +57,6 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-//        val navController = findNavController(R.id.flFragment)
-//
-//        bottomNavigationView.setupWithNavController(navController)
-//        val appBarConfiguration = AppBarConfiguration(setOf(R.id.mainActivity, R.id.accountFragment, R.id.paymentSetupFragment, R.id.businessDetailsFragment,R.id.walletTransactionFragment2))
     }
 
     fun replaceFragment(fragment: Fragment){
@@ -61,22 +71,15 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.action_bar, menu)
         return super.onCreateOptionsMenu(menu)
     }
-   /* private fun setCurrentFragment(fragment: Fragment)=
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment,fragment)
-            commit()
-        }
-
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.add_team_icon -> Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
-            R.id.bell_notification_icon -> Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_SHORT).show()
-            R.id.person -> {
-                Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show()
-            }
-        }
-        return super.onOptionsItemSelected(item)
-    }*/
 }
+
+
+/*
+1) Update Account Details
+2) Update Business Details
+3) Make dialog box enter cvv
+4) Remove 0 balance proceed to payment
+5) Call payment api
+6) Do recyclerview show recent transaction
+7) Show transaction Details
+ */

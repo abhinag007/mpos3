@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.tech.mpos.MainActivity.Companion.responseBody
+import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.databinding.FragmentDashboardBinding
 import com.tech.mpos.databinding.FragmentWalletTransactionBinding
 
@@ -19,7 +20,8 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentWalletTransactionBinding.inflate(inflater,container,false)
-       binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
+        binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
+        binding.textView13.text = "${transactionData.body()?.walletBalance} CAD"
         return binding.root
     }
 

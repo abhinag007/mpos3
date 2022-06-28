@@ -4,15 +4,19 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.tech.mpos.MainActivity.Companion.ACCESS_TOKEN
 import com.tech.mpos.MainActivity.Companion.responseBody
+import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.models.SignInBody
 import com.tech.mpos.loginResponse.LoginResponse
+import com.tech.mpos.transactionResponse.TransactionResponse
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -65,10 +69,13 @@ class LoginActivity : AppCompatActivity() {
             }
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.code() == 200) {
-                    mProgressBar.dismiss()
                     email_phone_et.setText("")
                     password_et.setText("")
                     responseBody = response
+                    ACCESS_TOKEN = responseBody.body()?.accessToken.toString()
+//                    MainActivity().getTransactionData()
+
+                    mProgressBar.dismiss()
                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()
