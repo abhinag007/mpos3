@@ -14,9 +14,14 @@ import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.loginResponse.LoginResponse
 import com.tech.mpos.transactionResponse.TransactionResponse
+import com.tech.mpos.userResponse.UserResponse
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity() {
     private val homeFragment=FirstFragment()
@@ -28,13 +33,12 @@ class MainActivity : AppCompatActivity() {
     companion object {
         lateinit var responseBody: Response<LoginResponse>
         lateinit var transactionData: Response<TransactionResponse>
+        lateinit var UserData: Response<UserResponse>
         lateinit var ACCESS_TOKEN: String
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
 //        getTransactionData()
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         replaceFragment(homeFragment)
@@ -71,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.action_bar, menu)
         return super.onCreateOptionsMenu(menu)
     }
+
 }
 
 

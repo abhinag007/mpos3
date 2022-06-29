@@ -60,7 +60,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CAD 9"
+        android:text="CAD ..."
         android:textColor="@color/black"
         android:textSize="42dp"
         android:textStyle="bold"

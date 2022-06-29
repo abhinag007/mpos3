@@ -4,25 +4,28 @@ import android.app.ProgressDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.tech.mpos.MainActivity.Companion.ACCESS_TOKEN
 import com.tech.mpos.MainActivity.Companion.responseBody
-import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.models.SignInBody
 import com.tech.mpos.loginResponse.LoginResponse
-import com.tech.mpos.transactionResponse.TransactionResponse
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : AppCompatActivity() {
+
+    companion object{
+        lateinit var mProgress:ProgressDialog
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +37,6 @@ class LoginActivity : AppCompatActivity() {
         val signin = findViewById<Button>(R.id.signIn_btn)
         val signup = findViewById<TextView>(R.id.signup_tv)
 
-        val mProgress:ProgressDialog
         mProgress = ProgressDialog(this);
         mProgress.setTitle("Login...");
         mProgress.setMessage("Please wait...");
@@ -42,9 +44,9 @@ class LoginActivity : AppCompatActivity() {
         mProgress.setIndeterminate(true);
 
 
-        signin.setOnClickListener{
+        signin.setOnClickListener {
             mProgress.show()
-            signin(email.text.toString(),password.text.toString(),mProgress)
+            signin(email.text.toString(),password.text.toString())
         }
 
         signup.setOnClickListener {
@@ -55,12 +57,12 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun signin(username: String, password: String, mProgressBar: ProgressDialog){
+    private fun signin(username: String, password: String){
         val retIn = RemoteDataSource.getRetrofitInstance().create(ApiInterface::class.java)
         val signInInfo = SignInBody(username, password)
         retIn.signin(signInInfo).enqueue(object : Callback<LoginResponse> {
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
-                mProgressBar.dismiss()
+                mProgress.dismiss()
                 Toast.makeText(
                     this@LoginActivity,
                     t.message,
@@ -73,14 +75,34 @@ class LoginActivity : AppCompatActivity() {
                     password_et.setText("")
                     responseBody = response
                     ACCESS_TOKEN = responseBody.body()?.accessToken.toString()
-//                    MainActivity().getTransactionData()
+                    GlobalScope.launch {
+                        suspend {
+                            FetchTransactionData().getTransactionData(this@LoginActivity)
+//                            FetchTransactionData().updateUserData(this@LoginActivity)
+                        }.invoke()
+                    }
+                    System.out.println("HI")
+                   /* GlobalScope.launch(Dispatchers.IO) {
+                            val status = async { FetchTransactionData().getTransactionData() }
+                            Log.d("status under: ", status.await())
+                            */
 
-                    mProgressBar.dismiss()
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                    startActivity(intent)
-                    finish()
+                /*if (status.isActive){
+                                mProgressBar.dismiss()
+                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }*//*
+                    }*/
+//                    Log.d("status: ", transactionData.body()?.walletBalance.toString())
+//                        mProgressBar.dismiss()
+//                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+
+
                 } else {
-                    mProgressBar.dismiss()
+                    mProgress.dismiss()
 
                     Toast.makeText(this@LoginActivity, "Login failed!", Toast.LENGTH_SHORT).show()
                 }

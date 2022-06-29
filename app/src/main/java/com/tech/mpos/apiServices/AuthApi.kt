@@ -1,8 +1,11 @@
 package com.tech.mpos.apiServices
 
+import android.database.Observable
 import com.tech.mpos.models.SignInBody
 import com.tech.mpos.models.UserBody
 import com.tech.mpos.loginResponse.LoginResponse
+import com.tech.mpos.models.EmailUpdate
+import com.tech.mpos.models.ReceiptEmail
 import com.tech.mpos.transactionResponse.TransactionResponse
 import com.tech.mpos.userResponse.UserResponse
 import okhttp3.RequestBody
@@ -21,12 +24,16 @@ interface ApiInterface {
         @Body info: UserBody
     ): retrofit2.Call<ResponseBody>
 
-    @Headers("Content-Type:application/json")
+    @Headers("Content-Type:application/json", "Accept: 'application/json")
     @GET("transactions")
     fun transactionsData(@Header("Authorization") token: String): Call<TransactionResponse>
 
     @Headers("Content-Type:application/json")
     @PUT("users/me")
-    fun updateUser(@Header("Authorization") token: String, @Body requestBody: RequestBody):Call<UserResponse>
+    fun updateReceiptEmail(@Header("Authorization") token: String, @Body requestBody: ReceiptEmail):Call<UserResponse>
+
+    @Headers("Content-Type:application/json")
+    @PUT("users/me")
+    fun updateEmail(@Header("Authorization") token: String, @Body requestBody: EmailUpdate):Call<UserResponse>
 
 }

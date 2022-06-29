@@ -15,6 +15,7 @@ import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.databinding.FragmentDashboardBinding
 import com.tech.mpos.transactionResponse.TransactionResponse
+import kotlinx.android.synthetic.main.fragment_dashboard.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -27,7 +28,6 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -35,13 +35,14 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        getTransactionData()
         _binding = FragmentDashboardBinding.inflate(inflater,container,false)
         val volume = resources.getStringArray(R.array.volume)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, volume)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
         binding.welcomeNameTv.text = "Welcome ${responseBody.body()?.data?.businessName}"
-//        binding.textView4.text = "CAD ${transactionData.body()?.walletBalance}"
+//        Log.d("data","hi ${transactionData.body()?.walletBalance.toString()}")
+
+        binding.textView4.text = "CAD ${transactionData.body()?.walletBalance}"
         binding.tapBoxLl.setOnClickListener {
             (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)
         }
@@ -49,7 +50,9 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         return binding.root
     }
 
-    fun getTransactionData(){
+
+/*
+    fun getTransactionData() {
         val retIn = RemoteDataSource.getRetrofitInstance().create(ApiInterface::class.java)
         val apiInterface = retIn.transactionsData(token = "Bearer ${MainActivity.ACCESS_TOKEN}")
 
@@ -59,6 +62,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
                 response: Response<TransactionResponse>,
             ) {
                 transactionData = response
+//                textView4.setText(transactionData.body()?.walletBalance.toString())
 //                Toast.makeText(this@FirstFragment, transactionData.body()?.walletBalance.toString(),
 //                    Toast.LENGTH_SHORT).show()
 
@@ -71,7 +75,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
         })
 
-    }
+    }*/
 
     override fun onDestroy() {
         super.onDestroy()
