@@ -29,11 +29,15 @@ interface ApiInterface {
     fun transactionsData(@Header("Authorization") token: String): Call<TransactionResponse>
 
     @Headers("Content-Type:application/json")
-    @PUT("users/me")
+    @POST("users/me")
     fun updateReceiptEmail(@Header("Authorization") token: String, @Body requestBody: ReceiptEmail):Call<UserResponse>
 
     @Headers("Content-Type:application/json")
-    @PUT("users/me")
+    @GET("users/me")
+    fun getUserData(@Header("Authorization") token: String):Call<UserResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("users/me")
     fun updateEmail(@Header("Authorization") token: String, @Body requestBody: EmailUpdate):Call<UserResponse>
 
 }

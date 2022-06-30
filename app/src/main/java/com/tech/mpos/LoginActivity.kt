@@ -77,8 +77,8 @@ class LoginActivity : AppCompatActivity() {
                     ACCESS_TOKEN = responseBody.body()?.accessToken.toString()
                     GlobalScope.launch {
                         suspend {
-                            FetchTransactionData().getTransactionData(this@LoginActivity)
-//                            FetchTransactionData().updateUserData(this@LoginActivity)
+//                            FetchTransactionData().getTransactionData(this@LoginActivity)
+                            FetchTransactionData().getUserData(this@LoginActivity)
                         }.invoke()
                     }
                     System.out.println("HI")
