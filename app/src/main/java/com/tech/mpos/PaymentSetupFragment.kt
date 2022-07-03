@@ -7,28 +7,16 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
 
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class PaymentSetupFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
 
     private var _binding: FragmentPaymentSetupBinding?=null
     private val binding get() = _binding!!
     private var amount: Double = 0.0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,9 +28,14 @@ class PaymentSetupFragment : Fragment() {
         binding.nameInitialsTv.setText(MainActivity.responseBody.body()?.data?.businessName?.get(0)?.toUpperCase().toString())
         binding.businessNameTv.setText(MainActivity.responseBody.body()?.data?.businessName)
         binding.proceedButtonBtn.setOnClickListener {
-            val intent = Intent (getActivity(), PayingActivity::class.java)
-            intent.putExtra("totalAmount",totalAmount.toString())
-            startActivity(intent)
+            if(binding.totalAmountUpdateTv.text != "CAD 0.0"){
+                val intent = Intent (getActivity(), PayingActivity::class.java)
+                intent.putExtra("totalAmount",totalAmount.toString())
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(context, "Please Enter Amount",Toast.LENGTH_SHORT).show()
+            }
         }
 
 

@@ -80,10 +80,10 @@ class MainActivity : AppCompatActivity() {
 
 
 /*
-1) Update Account Details
-2) Update Business Details
-3) Make dialog box enter cvv
-4) Remove 0 balance proceed to payment
+1) Update Account Details (Check Without animation)
+2) Update Business Details (Check Without Animation)
+3) Make dialog box enter cvv (check)
+4) Remove 0 balance proceed to payment (Check)
 5) Call payment api
 6) Do recyclerview show recent transaction
 7) Show transaction Details

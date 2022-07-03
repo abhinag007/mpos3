@@ -1,5 +1,6 @@
 package com.tech.mpos
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -27,6 +28,11 @@ class AccountFragment : Fragment() {
         binding.nameInitialsTv.setText(responseBody.body()?.data?.businessName?.get(0)?.toUpperCase().toString())
         binding.button2.setOnClickListener{
             FetchTransactionData().updateUserReceiptData(context,ReceiptEmail(email_cb.isChecked==true))
+        }
+
+        binding.textView14.setOnClickListener {
+            val intent = Intent (getActivity(), LoginActivity::class.java)
+            startActivity(intent)
         }
         return binding.root
     }
