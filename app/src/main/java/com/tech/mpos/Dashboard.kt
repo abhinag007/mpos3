@@ -11,11 +11,13 @@ import com.tech.mpos.MainActivity.Companion.responseBody
 import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.PaymentSetupFragment
 import com.tech.mpos.R
+import com.tech.mpos.WalletTransactionFragment
 import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.databinding.FragmentDashboardBinding
 import com.tech.mpos.transactionResponse.TransactionResponse
 import kotlinx.android.synthetic.main.fragment_dashboard.*
+import kotlinx.android.synthetic.main.fragment_wallet_transaction.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,6 +30,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        WalletTransactionFragment().showData()
     }
 
     override fun onCreateView(

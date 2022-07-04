@@ -10,6 +10,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/button_border.xml" value="0.148" />
         <entry key="..\:/mpos/app/src/main/res/drawable/button_border_fill.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/card_view.xml" value="0.173" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/check_icon.xml" value="0.176" />
         <entry key="..\:/mpos/app/src/main/res/drawable/check_iconj.xml" value="0.188" />
         <entry key="..\:/mpos/app/src/main/res/drawable/circle_check_false.xml" value="0.2" />
         <entry key="..\:/mpos/app/src/main/res/drawable/color_cursor.xml" value="0.148" />
@@ -21,6 +22,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/gradient_circle_xml.xml" value="0.1345" />
         <entry key="..\:/mpos/app/src/main/res/drawable/home_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.136" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/ic_close.xml" value="0.176" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_hide_icon.xml" value="0.173" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_img.xml" value="0.179" />
         <entry key="..\:/mpos/app/src/main/res/drawable/ic_link.xml" value="0.1355" />
@@ -32,6 +34,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/invite_box.xml" value="0.12" />
         <entry key="..\:/mpos/app/src/main/res/drawable/name_initial_circle_baground.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/paying_curve_shape.xml" value="0.1355" />
+        <entry key="..\:/mpos/app/src/main/res/drawable/paying_curve_shape_red.xml" value="0.176" />
         <entry key="..\:/mpos/app/src/main/res/drawable/paymb_button.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/person_icon.xml" value="0.1355" />
         <entry key="..\:/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.1355" />
@@ -39,7 +42,7 @@
         <entry key="..\:/mpos/app/src/main/res/drawable/update_button_fill_green.xml" value="0.222" />
         <entry key="..\:/mpos/app/src/main/res/drawable/white_box.xml" value="0.179" />
         <entry key="..\:/mpos/app/src/main/res/layout-v28/fragment_wallet_transaction.xml" value="0.27291666666666664" />
-        <entry key="..\:/mpos/app/src/main/res/layout/activity_login.xml" value="0.67" />
+        <entry key="..\:/mpos/app/src/main/res/layout/activity_login.xml" value="0.4959481361426256" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_main.xml" value="0.12" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_navigation.xml" value="0.16" />
         <entry key="..\:/mpos/app/src/main/res/layout/activity_paying.xml" value="0.2" />
@@ -58,10 +61,10 @@
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_payment_setup.xml" value="0.25" />
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_recent_transaction.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/layout/fragment_slideshow.xml" value="0.27291666666666664" />
-        <entry key="..\:/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.25" />
+        <entry key="..\:/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.22" />
         <entry key="..\:/mpos/app/src/main/res/layout/nav_header_navigation.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/layout/test.xml" value="0.14" />
-        <entry key="..\:/mpos/app/src/main/res/layout/transaction.xml" value="0.22" />
+        <entry key="..\:/mpos/app/src/main/res/layout/transaction.xml" value="0.5" />
         <entry key="..\:/mpos/app/src/main/res/menu/action_bar.xml" value="0.25" />
         <entry key="..\:/mpos/app/src/main/res/menu/activity_main_drawer.xml" value="0.125" />
         <entry key="..\:/mpos/app/src/main/res/menu/activity_navigation_drawer.xml" value="0.27291666666666664" />
@@ -77,17 +80,17 @@
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout-land/activity_recent_transaction.xml" value="0.2947916666666667" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_paying.xml" value="0.13333333333333333" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_paying.xml" value="0.10666666666666667" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_recent_transaction.xml" value="0.22" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_signup.xml" value="0.17552083333333332" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/activity_transaction_status.xml" value="0.14666666666666667" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/dropdown_item.xml" value="0.17552083333333332" />
-        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_account.xml" value="0.3442288049029622" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_account.xml" value="0.17552083333333332" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_business_details.xml" value="0.16666666666666666" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_dashboard.xml" value="0.16666666666666666" />
-        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_payment_setup.xml" value="0.1" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_payment_setup.xml" value="0.13333333333333333" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_recent_transaction.xml" value="0.16666666666666666" />
-        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.14666666666666667" />
+        <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.17552083333333332" />
         <entry key="..\:/mpos_android/mpos/app/src/main/res/layout/transaction.xml" value="0.1" />
       </map>
     </option>

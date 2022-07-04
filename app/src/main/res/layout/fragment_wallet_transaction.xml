@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
-    android:layout_marginHorizontal="15dp"
+    android:layout_marginHorizontal="0dp"
     tools:context=".WalletTransactionFragment">
 
     <TextView
@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Your Wallet Balance"
+        android:layout_marginHorizontal="15dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -26,6 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="15dp"
         android:src="@drawable/card_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -36,7 +38,7 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="38dp"
         android:layout_marginTop="20dp"
         android:text="100 CAD"
         android:textColor="@color/white"
@@ -60,7 +62,7 @@
         android:id="@+id/uniqueIdText_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="38dp"
         android:layout_marginTop="80dp"
         android:text="Unique ID"
         android:textColor="@color/grey"
@@ -78,7 +80,7 @@
         android:text=""
         android:textColor="@color/grey"
         android:textStyle="bold"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="38dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,6 +94,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:text="Recent Transactions"
+        android:layout_marginHorizontal="15dp"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -119,9 +122,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="No Data"
+        android:visibility="gone"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recentTransaction_tv" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:indeterminateTint="@color/primary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recentTransaction_tv" />
 

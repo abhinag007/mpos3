@@ -11,7 +11,7 @@
         android:layout_height="661dp"
         android:layout_x="-258dp"
         android:layout_y="-172dp"
-        android:src="@drawable/paying_curve_shape"
+        android:src="@drawable/paying_curve_shape_green"
         tools:layout_editor_absoluteX="49dp"
         tools:layout_editor_absoluteY="-386dp" />
 

@@ -40,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="@+id/transactionDetails_tv"
         app:layout_constraintStart_toStartOf="@+id/transactionDetails_tv"
         app:layout_constraintTop_toBottomOf="@+id/transactionDetails_tv"
-        app:srcCompat="@drawable/paying_curve_shape" />
+        app:srcCompat="@drawable/paying_curve_shape_green" />
 
     <ImageView
         android:id="@+id/statusIcon_iv"
