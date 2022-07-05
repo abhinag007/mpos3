@@ -35,6 +35,7 @@ class FetchTransactionData {
                 Log.d("Wallet: ", transactionData.body()?.walletBalance.toString())
                 mProgress.dismiss()
                 val intent = Intent(context, MainActivity::class.java)
+                intent.putExtra("position","-1")
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                 context.startActivity(intent)
             }
@@ -77,6 +78,7 @@ class FetchTransactionData {
 //        val receiptEmail = ReceiptEmail(email_cb.isEnabled==true)
         val apiInterface = retIn.updateReceiptEmail(token = "Bearer ${MainActivity.ACCESS_TOKEN}",receiptEmail)
 //        mProgress.show()
+
         apiInterface.enqueue(object: Callback<UserResponse> {
             override fun onResponse(
                 call: Call<UserResponse>,
@@ -85,6 +87,7 @@ class FetchTransactionData {
                 if (response.code() == 200){
                     UserData = response
                     mProgress.dismiss()
+                    Toast.makeText(context,"Update Done",Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -108,6 +111,7 @@ class FetchTransactionData {
                 if (response.code() == 200){
                     UserData = response
                     mProgress.dismiss()
+                    Toast.makeText(context,"Update Done",Toast.LENGTH_SHORT).show()
                 }
             }
 

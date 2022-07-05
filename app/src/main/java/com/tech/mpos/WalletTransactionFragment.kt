@@ -31,21 +31,9 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         _binding = FragmentWalletTransactionBinding.inflate(inflater,container,false)
         binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
         binding.textView13.text = "${transactionData.body()?.walletBalance} CAD"
-
-            getTransaction()
-
+        getTransaction()
         return binding.root
     }
-
-  /*  fun showData(){
-        val transaction = transactionData.body()
-        if(transaction!=null){
-            listOfTransactions_rv.visibility = View.VISIBLE
-            adapter = ListAdapter(context,transaction.transactions)
-            listOfTransactions_rv.adapter = adapter
-            listOfTransactions_rv.layoutManager = LinearLayoutManager(context)
-        }
-    }*/
 
     private fun getTransaction() {
         val retIn = RemoteDataSource.getRetrofitInstance().create(ApiInterface::class.java)
@@ -60,11 +48,12 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
             ) {
                 transactionData = response
                 val transaction = response.body()
-                if(transaction!=null){
+
+                if(transaction?.totalTransaction!=0){
                     textView16.visibility = View.GONE
                     progressBar.visibility = View.GONE
                     listOfTransactions_rv.visibility = View.VISIBLE
-                    adapter = ListAdapter(context,transaction.transactions)
+                    adapter = ListAdapter(context,transaction!!.transactions)
                     listOfTransactions_rv.adapter = adapter
                     listOfTransactions_rv.layoutManager = LinearLayoutManager(context)
                 }

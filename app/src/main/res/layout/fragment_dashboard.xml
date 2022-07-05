@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="430dp"
         android:layout_marginBottom="32dp"
-        android:src="@drawable/dashboard_curve"
+        android:src="@drawable/dashboard_curve_green"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"

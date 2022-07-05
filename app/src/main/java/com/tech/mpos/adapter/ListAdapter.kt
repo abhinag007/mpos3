@@ -1,18 +1,17 @@
 package com.tech.mpos.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.content.res.AppCompatResources
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.tech.mpos.MainActivity
 import com.tech.mpos.R
 import com.tech.mpos.transactionResponse.Transaction
-import kotlinx.android.synthetic.main.transaction.view.*
 import java.util.*
 
 
@@ -44,34 +43,31 @@ class ListAdapter(
                 Locale.getDefault()
             ) else it.toString()
         }
+        holder.transactionAmount.text = transaction.amount.toString()
 
-
-//            holder.transactionAmount.setTextColor(Color.BLACK)
 
         if (holder.status.text.equals("Failed")) {
-        /*    holder.statusColor.drawable.setColorFilter(
-                R.color.redColor,
-                PorterDuff.Mode.SRC_ATOP
-            )*/
 
-//            val unwrappedDrawable = AppCompatResources.getDrawable(context!!, R.drawable.paying_curve_shape)
-//            val wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable!!)
-//            DrawableCompat.setTint(wrappedDrawable, Color.RED)
             holder.statusColor.setBackgroundResource(R.drawable.paying_curve_shape_red)
             holder.icon.setBackgroundResource(R.drawable.ic_close)
             holder.transactionAmount.setTextColor(Color.RED)
         }
         else {
-//            val unwrappedDrawable = AppCompatResources.getDrawable(context!!, com.tech.mpos.R.drawable.paying_curve_shape)
-//            val wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable!!)
-//            DrawableCompat.setTint(wrappedDrawable, R.color.primary)
-//            holder.statusColor.drawable.setColorFilter(R.color.primary, PorterDuff.Mode.SRC_ATOP)
             holder.statusColor.setBackgroundResource(R.drawable.paying_curve_shape_green)
 
             holder.icon.setBackgroundResource(R.drawable.check_icon)
             holder.transactionAmount.setTextColor(Color.parseColor("#ff266342"))
         }
 
+        holder.itemView.setOnClickListener{
+            val intent = Intent(context, MainActivity::class.java)
+            intent.putExtra("position","$position")
+            context?.startActivity(intent)
+//            MainActivity().replaceFragment(RecentTransactionFragment(),1)
+        }
+
+       /* holder.itemView.setOnClickListener(View.OnClickListener {
+        })*/
 
     }
 

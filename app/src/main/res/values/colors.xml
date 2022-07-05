@@ -10,5 +10,6 @@
     <color name="primary">#ff266342</color>
     <color name="iconGrey">#ffCACACA</color>
     <color name="redColor">#FF0000</color>
+    <color name="lightRedColor">#FFF0F0</color>
 
 </resources>

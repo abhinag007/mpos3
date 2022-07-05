@@ -1,27 +1,17 @@
 package com.tech.mpos
 
 import FirstFragment
-import android.graphics.Movie
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.FileObserver.ACCESS
-import android.util.Log
 import android.view.Menu
-import android.widget.Toast
+import android.view.View
 import androidx.fragment.app.Fragment
+import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.tech.mpos.apiServices.ApiInterface
-import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.loginResponse.LoginResponse
 import com.tech.mpos.transactionResponse.TransactionResponse
 import com.tech.mpos.userResponse.UserResponse
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
-import kotlin.coroutines.CoroutineContext
 
 class MainActivity : AppCompatActivity() {
     private val homeFragment=FirstFragment()
@@ -29,26 +19,36 @@ class MainActivity : AppCompatActivity() {
     private val businessDetailsFragment=BusinessDetailsFragment()
     private val paymentSetupFragment=PaymentSetupFragment()
     private val walletTransactionFragment=WalletTransactionFragment()
+    private val recentTransactionFragment=TransactionDetailsFragment()
 
     companion object {
         lateinit var responseBody: Response<LoginResponse>
         lateinit var transactionData: Response<TransactionResponse>
         lateinit var UserData: Response<UserResponse>
         lateinit var ACCESS_TOKEN: String
+        var POSITION = -1
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        getTransactionData()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        replaceFragment(homeFragment)
+        val intent = getIntent();
+        val position = intent.getStringExtra("position")
+        val appBar = findViewById<AppBarLayout>(R.id.appBarLayout)
+        if (position?.toInt()!! == -2){
+            finish()
+//            replaceFragment(walletTransactionFragment)
+        }
+        else if(position?.toInt()!! >=0){
+            appBar.visibility = View.GONE
+            POSITION = position.toInt()
+            replaceFragment(recentTransactionFragment)
+        }
+        else
+            replaceFragment(homeFragment)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = ""
 
-//        val firstFragment=FirstFragment()
-//        setCurrentFragment(firstFragment)
-//        val firstFragment=RecentTransactionFragment()
-//        setCurrentFragment(firstFragment)
 
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener {
@@ -64,11 +64,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun replaceFragment(fragment: Fragment){
-        if(fragment!=null) {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.flFragment,fragment)
-            transaction.commit()
-        }
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.flFragment,fragment)
+        transaction.commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

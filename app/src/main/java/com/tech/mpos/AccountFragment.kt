@@ -1,10 +1,20 @@
 package com.tech.mpos
 
+import android.R
+import android.app.Activity
+import android.app.Dialog
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewGroup.LayoutParams.MATCH_PARENT
+import android.view.Window
+import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity.Companion.UserData
 import com.tech.mpos.MainActivity.Companion.responseBody
@@ -40,4 +50,3 @@ class AccountFragment : Fragment() {
 
 }
 
-class Task(private var emailStatus: Boolean, private var email: String)

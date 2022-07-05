@@ -30,7 +30,6 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        WalletTransactionFragment().showData()
     }
 
     override fun onCreateView(
@@ -43,8 +42,6 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, volume)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
         binding.welcomeNameTv.text = "Welcome ${responseBody.body()?.data?.businessName}"
-//        Log.d("data","hi ${transactionData.body()?.walletBalance.toString()}")
-
         binding.textView4.text = "CAD ${transactionData.body()?.walletBalance}"
         binding.tapBoxLl.setOnClickListener {
             (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)
@@ -52,33 +49,6 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
 
         return binding.root
     }
-
-
-/*
-    fun getTransactionData() {
-        val retIn = RemoteDataSource.getRetrofitInstance().create(ApiInterface::class.java)
-        val apiInterface = retIn.transactionsData(token = "Bearer ${MainActivity.ACCESS_TOKEN}")
-
-        apiInterface.enqueue( object : Callback<TransactionResponse> {
-            override fun onResponse(
-                call: Call<TransactionResponse>,
-                response: Response<TransactionResponse>,
-            ) {
-                transactionData = response
-//                textView4.setText(transactionData.body()?.walletBalance.toString())
-//                Toast.makeText(this@FirstFragment, transactionData.body()?.walletBalance.toString(),
-//                    Toast.LENGTH_SHORT).show()
-
-            }
-
-            override fun onFailure(call: Call<TransactionResponse>, t: Throwable) {
-                t.message?.let { Log.d("data: ", it) }
-//                Toast.makeText(this@FirstFragment, "Data: ${ t.message }", Toast.LENGTH_SHORT).show()
-            }
-
-        })
-
-    }*/
 
     override fun onDestroy() {
         super.onDestroy()

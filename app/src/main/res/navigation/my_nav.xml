@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/recentTransactionFragment"
-        android:name="com.tech.mpos.RecentTransactionFragment"
+        android:name="com.tech.mpos.TransactionDetailsFragment"
         android:label="RecentTransactionFragment" />
 
 </navigation>
