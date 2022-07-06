@@ -100,6 +100,7 @@
         <RadioButton
             android:id="@+id/organization_rb"
             android:enabled="false"
+            android:checked="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="5dp"
@@ -162,7 +163,7 @@
             android:layout_height="match_parent"
             android:checked="false"
             android:enabled="false"
-            android:text="Phone/SMS"
+            android:text="Printer"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="16dp" />
 
