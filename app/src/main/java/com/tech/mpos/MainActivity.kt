@@ -19,14 +19,18 @@ class MainActivity : AppCompatActivity() {
     private val businessDetailsFragment=BusinessDetailsFragment()
     private val paymentSetupFragment=PaymentSetupFragment()
     private val walletTransactionFragment=WalletTransactionFragment()
-    private val recentTransactionFragment=TransactionDetailsFragment()
+    private val transactionDetailsFragment=TransactionDetailsFragment()
+    private val recentTransactionFragment=recentTransactionDetails()
 
     companion object {
         lateinit var responseBody: Response<LoginResponse>
         lateinit var transactionData: Response<TransactionResponse>
         lateinit var UserData: Response<UserResponse>
         lateinit var ACCESS_TOKEN: String
+        lateinit var AMOUNT: String
         var POSITION = -1
+        lateinit var CVV: String
+//        var TRANSACTION_ID:String = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,13 +43,18 @@ class MainActivity : AppCompatActivity() {
             finish()
 //            replaceFragment(walletTransactionFragment)
         }
+        else if(position?.toInt()==-3){
+            appBar.visibility = View.GONE
+            replaceFragment(recentTransactionFragment)
+        }
         else if(position?.toInt()!! >=0){
             appBar.visibility = View.GONE
             POSITION = position.toInt()
-            replaceFragment(recentTransactionFragment)
+            replaceFragment(transactionDetailsFragment)
         }
         else
             replaceFragment(homeFragment)
+//            replaceFragment(recentTransactionFragment)
         setSupportActionBar(findViewById(R.id.toolbar))
         supportActionBar?.title = ""
 

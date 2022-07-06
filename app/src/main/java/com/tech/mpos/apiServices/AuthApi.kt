@@ -1,11 +1,7 @@
 package com.tech.mpos.apiServices
 
-import android.database.Observable
-import com.tech.mpos.models.SignInBody
-import com.tech.mpos.models.UserBody
 import com.tech.mpos.loginResponse.LoginResponse
-import com.tech.mpos.models.EmailUpdate
-import com.tech.mpos.models.ReceiptEmail
+import com.tech.mpos.models.*
 import com.tech.mpos.transactionResponse.TransactionResponse
 import com.tech.mpos.userResponse.UserResponse
 import okhttp3.RequestBody
@@ -39,5 +35,18 @@ interface ApiInterface {
     @Headers("Content-Type:application/json")
     @POST("users/me")
     fun updateEmail(@Header("Authorization") token: String, @Body requestBody: EmailUpdate):Call<UserResponse>
+
+    @Headers("Content-Type:application/json")
+    @POST("payments")
+    fun processPayment(@Header("Authorization") token: String, @Body requestBody: processPayment):Call<com.tech.mpos.paymentResponse.processPayment>
+
+//    @Headers("Content-Type:application/json")
+//    @POST("payments/${TRANSACTION_ID}")
+//    fun makePayment(@Header("Authorization") token: String, @Body requestBody: processPayment)
+
+//    @Headers("Content-Type:application/json")
+//    @POST("payments")
+//    fun responsePayment(@Header("Authorization") token: String, @Body requestBody: processPayment)
+
 
 }

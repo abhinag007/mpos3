@@ -12,9 +12,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.marginLeft
 import androidx.core.view.setPadding
+import com.tech.mpos.MainActivity.Companion.CVV
 import com.tech.mpos.nfcService.NfcActivity
 
-class PayingActivity : AppCompatActivity() {
+class PayingActivity : NfcActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_paying)
@@ -23,7 +24,6 @@ class PayingActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.textView2)
         textView.text = "CAD $amount"
         Log.d("check","above")
-        Intent(this, NfcActivity::class.java)
         Log.d("check","below")
 
         val close = findViewById<ImageView>(R.id.closeScreen_iv)
@@ -31,9 +31,12 @@ class PayingActivity : AppCompatActivity() {
         close.setOnClickListener {
             this.finish()
         }
-        nfcButton.setOnClickListener {
+//        var i = Intent(this, NfcActivity::class.java)
+//        startActivity(i)
+
+     /*   nfcButton.setOnClickListener {
             showdialog()
-        }
+        }*/
 
     }
 
@@ -47,7 +50,7 @@ class PayingActivity : AppCompatActivity() {
         input.setPadding(70)
         builder.setView(input)
         builder.setPositiveButton("OK", DialogInterface.OnClickListener { dialog, which ->
-            var m_Text = input.text.toString()
+//            CVV = input.text.toString()
         })
         builder.setNegativeButton("Cancel", DialogInterface.OnClickListener { dialog, which -> { dialog.cancel() } })
 

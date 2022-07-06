@@ -12,6 +12,7 @@ import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.models.EmailUpdate
 import com.tech.mpos.models.ReceiptEmail
+import com.tech.mpos.models.UserBody
 import com.tech.mpos.transactionResponse.TransactionResponse
 import com.tech.mpos.userResponse.UserResponse
 import retrofit2.Call
@@ -120,6 +121,18 @@ class FetchTransactionData {
                 Toast.makeText(context,"Update Failed due to some error", Toast.LENGTH_SHORT).show()
             }
         })
+    }
+
+    fun processPayment(context: Context, amount: String, tax: String){
+
+        val retIn = RemoteDataSource.getRetrofitInstance().create(ApiInterface::class.java)
+
+        val registerInfo = com.tech.mpos.models.processPayment(amount,tax)
+
+        val apiInterface = retIn.processPayment(token = "Bearer ${MainActivity.ACCESS_TOKEN}",registerInfo)
+
+
+
     }
 
 }

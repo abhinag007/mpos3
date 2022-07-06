@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.tech.mpos.MainActivity.Companion.AMOUNT
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
 
 
@@ -29,6 +30,7 @@ class PaymentSetupFragment : Fragment() {
         binding.businessNameTv.setText(MainActivity.responseBody.body()?.data?.businessName)
         binding.proceedButtonBtn.setOnClickListener {
             if(binding.totalAmountUpdateTv.text != "CAD 0.0"){
+                AMOUNT = totalAmount.toString()
                 val intent = Intent (getActivity(), PayingActivity::class.java)
                 intent.putExtra("totalAmount",totalAmount.toString())
                 startActivity(intent)
