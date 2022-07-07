@@ -1,27 +1,15 @@
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity
 import com.tech.mpos.MainActivity.Companion.responseBody
 import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.PaymentSetupFragment
 import com.tech.mpos.R
-import com.tech.mpos.WalletTransactionFragment
-import com.tech.mpos.apiServices.ApiInterface
-import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.databinding.FragmentDashboardBinding
-import com.tech.mpos.transactionResponse.TransactionResponse
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_wallet_transaction.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 
 class FirstFragment:Fragment(R.layout.fragment_dashboard) {
      private var _binding: FragmentDashboardBinding?=null
@@ -41,7 +29,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         val volume = resources.getStringArray(R.array.volume)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, volume)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
-        binding.welcomeNameTv.text = "Welcome ${responseBody.body()?.data?.businessName}"
+        binding.welcomeNameTv.text = "Welcome ${responseBody.body()?.data?.businessName?.capitalize()}"
         binding.textView4.text = "CAD ${transactionData.body()?.walletBalance}"
         binding.tapBoxLl.setOnClickListener {
             (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)

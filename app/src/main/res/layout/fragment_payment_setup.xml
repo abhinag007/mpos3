@@ -21,7 +21,7 @@
         android:id="@+id/nameInitials_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="H"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -35,13 +35,14 @@
         android:id="@+id/businessName_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
+        android:text="Hello"
         android:textColor="@color/black"
+        android:layout_marginStart="15dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/initialBackColor_iv"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/initialBackColor_iv"
         app:layout_constraintTop_toTopOf="@+id/initialBackColor_iv" />
 
@@ -74,21 +75,25 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputAmount_til"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="224dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="120dp"
         app:boxStrokeColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/amount_tv"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toEndOf="@+id/amount_tv"
-        app:layout_constraintTop_toTopOf="@+id/amount_tv">
+        app:layout_constraintTop_toTopOf="@+id/amount_tv"
+        app:layout_constraintVertical_bias="0.425">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:textCursorDrawable="@drawable/cursor_color"
-            android:textStyle="bold"
+            android:layout_height="wrap_content"
             android:inputType="numberDecimal"
+            android:textCursorDrawable="@drawable/cursor_color"
             android:textSize="18sp"
-            android:layout_height="wrap_content" />
+            android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,22 +111,24 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputTax_til"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="224dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_height="64dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="120dp"
         app:boxStrokeColor="@color/black"
         app:layout_constraintBottom_toBottomOf="@+id/taxPercent_tv"
         app:layout_constraintEnd_toEndOf="@+id/inputAmount_til"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/taxPercent_tv"
+        app:layout_constraintStart_toStartOf="@+id/inputAmount_til"
         app:layout_constraintTop_toTopOf="@+id/taxPercent_tv"
         app:layout_constraintVertical_bias="0.416">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
             android:textCursorDrawable="@drawable/cursor_color"
             android:textSize="18sp"
-            android:inputType="numberDecimal"
             android:textStyle="bold" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -132,9 +139,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
         android:text="Total amount to receive: "
+        android:layout_marginLeft="15dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/taxPercent_tv"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/taxPercent_tv" />
 
     <TextView
@@ -143,9 +151,10 @@
         android:layout_height="wrap_content"
         android:text="CAD 0.0"
         android:textSize="18sp"
+        android:layout_marginRight="15dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/totalAmount_tv"
-        app:layout_constraintEnd_toEndOf="@+id/inputTax_til"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/totalAmount_tv"
         app:layout_constraintTop_toTopOf="@+id/totalAmount_tv"

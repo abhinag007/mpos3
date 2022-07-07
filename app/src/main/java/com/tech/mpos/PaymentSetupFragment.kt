@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.compose.ui.text.capitalize
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity.Companion.AMOUNT
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
@@ -27,7 +28,7 @@ class PaymentSetupFragment : Fragment() {
         var totalAmount: Double = 0.0
         _binding = FragmentPaymentSetupBinding.inflate(inflater, container, false)
         binding.nameInitialsTv.setText(MainActivity.responseBody.body()?.data?.businessName?.get(0)?.toUpperCase().toString())
-        binding.businessNameTv.setText(MainActivity.responseBody.body()?.data?.businessName)
+        binding.businessNameTv.setText(MainActivity.responseBody.body()?.data?.businessName?.capitalize())
         binding.proceedButtonBtn.setOnClickListener {
             if(binding.totalAmountUpdateTv.text != "CAD 0.0"){
                 AMOUNT = totalAmount.toString()

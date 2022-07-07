@@ -42,8 +42,8 @@
         app:layout_constraintEnd_toEndOf="@+id/email_phone_et"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/email_phone_et"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.963" />
+        app:layout_constraintTop_toBottomOf="@+id/create_account_tv"
+        app:layout_constraintVertical_bias="0.943" />
 
     <EditText
         android:id="@+id/email_phone_et"
@@ -51,14 +51,14 @@
         android:layout_height="48dp"
         android:layout_marginHorizontal="30dp"
         android:background="@drawable/edit_text_border"
+        android:inputType="textEmailAddress"
         android:paddingHorizontal="8dp"
         android:textCursorDrawable="@drawable/color_cursor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.265"
+        app:layout_constraintVertical_bias="0.278"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/password_et"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.98" />
+        app:layout_constraintVertical_bias="0.989" />
 
     <EditText
         android:id="@+id/password_et"
@@ -86,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.407"
+        app:layout_constraintVertical_bias="0.42"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -100,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.538" />
 
     <TextView
         android:id="@+id/textView6"
@@ -108,12 +108,11 @@
         android:layout_height="wrap_content"
         android:text="Don't Have an Account? "
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signIn_btn"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintTop_toBottomOf="@+id/signIn_btn" />
 
     <TextView
         android:id="@+id/signup_tv"

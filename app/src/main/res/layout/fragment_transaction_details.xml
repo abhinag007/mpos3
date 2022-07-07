@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/transactionDetailsBaground"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/baground"
+    android:layout_height="match_parent" >
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".MainActivity">
 
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="410dp"
-        android:layout_height="418dp"
+        android:layout_width="413dp"
+        android:layout_height="421dp"
         android:background="@drawable/dashboard_curve_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -186,11 +191,12 @@
     <Button
         android:id="@+id/transactionHistory_btn"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="match_parent"
         android:layout_marginHorizontal="54dp"
         android:background="@drawable/button_border_fill"
         android:text="Transaction History"
         android:textSize="14sp"
+        android:layout_marginVertical="40dp"
         android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -199,3 +205,5 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
