@@ -23,11 +23,9 @@ class PayingActivity : NfcActivity() {
 
         val textView = findViewById<TextView>(R.id.textView2)
         textView.text = "CAD $amount"
-        Log.d("check","above")
-        Log.d("check","below")
 
         val close = findViewById<ImageView>(R.id.closeScreen_iv)
-        val nfcButton = findViewById<ImageView>(R.id.imageView3)
+//        val nfcButton = findViewById<ImageView>(R.id.imageView3)
         close.setOnClickListener {
             this.finish()
         }

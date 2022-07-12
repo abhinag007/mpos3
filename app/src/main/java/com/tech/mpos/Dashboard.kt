@@ -33,6 +33,7 @@ class FirstFragment:Fragment(R.layout.fragment_dashboard) {
         binding.textView4.text = "CAD ${transactionData.body()?.walletBalance}"
         binding.tapBoxLl.setOnClickListener {
             (activity as MainActivity?)?.replaceFragment(paymentSetupFragment)
+            
         }
 
         return binding.root

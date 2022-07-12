@@ -1,6 +1,7 @@
 package com.tech.mpos.nfcService.lib;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.TagLostException;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 
+import com.tech.mpos.MainActivity;
 import com.tech.mpos.nfcService.lib.enums.CardType;
 import com.tech.mpos.nfcService.lib.exception.CommandException;
 import com.tech.mpos.nfcService.lib.model.AflObject;
@@ -73,6 +75,9 @@ public class CtlessCardService implements NfcAdapter.ReaderCallback {
         // Check if the device has NFC
         if (mNfcAdapter == null) {
             Toast.makeText(mContext, "NFC not supported", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(mContext, MainActivity.class);
+            intent.putExtra("position",-5);
+            mContext.startActivity(intent);
         }
         // Check if NFC is enabled on device
         if (!mNfcAdapter.isEnabled()) {

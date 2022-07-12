@@ -1,6 +1,7 @@
 package com.tech.mpos
 
 import android.content.Intent
+import android.nfc.NfcAdapter
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -8,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.compose.ui.text.capitalize
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity.Companion.AMOUNT
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
@@ -34,7 +34,13 @@ class PaymentSetupFragment : Fragment() {
                 AMOUNT = totalAmount.toString()
                 val intent = Intent (getActivity(), PayingActivity::class.java)
                 intent.putExtra("totalAmount",totalAmount.toString())
-                startActivity(intent)
+                val nfcCheck = NfcAdapter.getDefaultAdapter(context)
+                if(nfcCheck !=null){
+                    startActivity(intent)
+                }
+                else
+                    Toast.makeText(context,"NFC Not Supported",Toast.LENGTH_SHORT).show()
+
             }
             else {
                 Toast.makeText(context, "Please Enter Amount",Toast.LENGTH_SHORT).show()

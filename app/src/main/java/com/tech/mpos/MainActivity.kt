@@ -44,11 +44,11 @@ class MainActivity : AppCompatActivity() {
             finish()
 //            replaceFragment(walletTransactionFragment)
         }
-        else if(position?.toInt()==-3){
+        else if(position.toInt() ==-3){
             appBar.visibility = View.GONE
             replaceFragment(recentTransactionFragment)
         }
-        else if(position?.toInt()!! >=0){
+        else if(position.toInt()!! >=0){
             appBar.visibility = View.GONE
             POSITION = position.toInt()
             replaceFragment(transactionDetailsFragment)
