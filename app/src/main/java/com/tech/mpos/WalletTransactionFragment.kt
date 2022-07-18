@@ -29,9 +29,19 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentWalletTransactionBinding.inflate(inflater,container,false)
-        binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
-        binding.textView13.text = "${transactionData.body()?.walletBalance} CAD"
+//        binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
+//        binding.textView13.text = "${transactionData.body()?.walletBalance} CAD"
         getTransaction()
+        var check = false
+        binding.settingIcon.setOnClickListener {
+            check = !check
+            if(check){
+                binding.horzontalScroll.visibility = View.VISIBLE
+            }
+            else{
+                binding.horzontalScroll.visibility = View.GONE
+            }
+        }
         return binding.root
     }
 
@@ -52,7 +62,7 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
                 if(transaction?.totalTransaction!=0){
                     textView16.visibility = View.GONE
                     progressBar.visibility = View.GONE
-                    listOfTransactions_rv.visibility = View.VISIBLE
+                    transactionBackground_ctl.visibility = View.VISIBLE
                     adapter = ListAdapter(context,transaction!!.transactions)
                     listOfTransactions_rv.adapter = adapter
                     listOfTransactions_rv.layoutManager = LinearLayoutManager(context)

@@ -46,7 +46,8 @@ class LoginActivity : AppCompatActivity() {
 
         signin.setOnClickListener {
             mProgress.show()
-            signin(email.text.toString(),password.text.toString())
+            signin("1","1")
+//            signin(email.text.toString(),password.text.toString())
         }
 
         signup.setOnClickListener {

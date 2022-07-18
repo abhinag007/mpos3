@@ -1,11 +1,11 @@
 package com.tech.mpos
 
 import FirstFragment
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -40,12 +40,13 @@ class MainActivity : AppCompatActivity() {
         val intent = getIntent();
         val position = intent.getStringExtra("position")
         val appBar = findViewById<AppBarLayout>(R.id.appBarLayout)
+        val bottom = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         if (position?.toInt()!! == -2){
             finish()
 //            replaceFragment(walletTransactionFragment)
         }
         else if(position.toInt() ==-3){
-            appBar.visibility = View.GONE
+            bottom.visibility = View.GONE
             replaceFragment(recentTransactionFragment)
         }
         else if(position.toInt()!! >=0){
@@ -67,7 +68,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.person -> replaceFragment(accountFragment)
                 R.id.paymb_button -> replaceFragment(paymentSetupFragment)
                 R.id.business_details -> replaceFragment(businessDetailsFragment)
-                R.id.wallet -> replaceFragment(walletTransactionFragment)
+                R.id.wallet -> {
+                    bottom.visibility = View.GONE
+                    replaceFragment(walletTransactionFragment)
+                }
+//                R.id.wallet -> {
+//                    val intent = Intent(this,TransactionsActivity::class.java)
+//                    startActivity(intent)
+//                }
             }
             true
         }

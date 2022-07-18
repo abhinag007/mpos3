@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,22 +10,23 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="445dp"
-        android:layout_height="396dp"
+        android:layout_width="430dp"
+        android:layout_height="365dp"
+        android:contentDescription="TODO"
         android:src="@drawable/dashboard_curve_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="TODO" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/welcome_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome Abhi"
-        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -58,7 +60,7 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:gravity="center"
@@ -74,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textView5"
         android:layout_width="match_parent"
         android:gravity="center"
@@ -121,7 +123,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.514">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="60dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="6dp"
@@ -129,7 +131,7 @@
                 android:src="@drawable/tap" />
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tap"
@@ -157,7 +159,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.514">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="60dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="6dp"
@@ -165,7 +167,7 @@
                 android:src="@drawable/ic_person" />
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="In Person"
@@ -193,7 +195,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.514">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="60dp"
                 android:layout_height="0dp"
                 android:layout_marginBottom="6dp"
@@ -202,7 +204,7 @@
                 android:contentDescription="TODO" />
 
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Link"
@@ -226,14 +228,14 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         app:layout_constraintVertical_bias="0.0">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/quick_charge"
             android:textColor="@color/primary"
             android:textStyle="bold" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:scaleType="fitXY"
@@ -260,7 +262,7 @@
         app:layout_constraintVertical_bias="1.0">
 
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/invite_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -275,7 +277,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.106" />
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/invite_long_tv"
             android:layout_width="171dp"
             android:layout_height="36dp"
@@ -289,7 +291,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.404" />
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView2"
             android:layout_width="155dp"
             android:layout_height="137dp"
@@ -301,7 +303,7 @@
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/ic_img" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="48dp"

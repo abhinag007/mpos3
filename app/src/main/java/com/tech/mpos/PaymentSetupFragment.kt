@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.tech.mpos.MainActivity.Companion.AMOUNT
 import com.tech.mpos.databinding.FragmentPaymentSetupBinding
+import kotlin.math.roundToInt
 
 
 class PaymentSetupFragment : Fragment() {
@@ -93,6 +94,7 @@ class PaymentSetupFragment : Fragment() {
                     tax = s.toString().toDouble()
 
                 totalAmount = amount + (amount * tax * 0.01)
+                totalAmount = (totalAmount * 100.0).roundToInt() / 100.0
                 binding.totalAmountUpdateTv.setText("CAD $totalAmount")
 
             }
