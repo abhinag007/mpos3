@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.tech.mpos.MainActivity.Companion.responseBody
 import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.adapter.ListAdapter
@@ -42,6 +45,34 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
                 binding.horzontalScroll.visibility = View.GONE
             }
         }
+
+        binding.periodBtn.setOnClickListener{
+            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
+            val bottomSheetView = LayoutInflater.from(context).inflate(
+                R.layout.layout_bottom_sheet_transaction_period,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
+
+            bottomSheetView.findViewById<ImageView>(R.id.closeButton).setOnClickListener {
+                    bottomSheetDialog?.dismiss()
+
+            }
+            bottomSheetDialog?.setContentView(bottomSheetView)
+            bottomSheetDialog?.show()
+        }
+
+        binding.statusBtn.setOnClickListener{
+            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
+            val bottomSheetView = LayoutInflater.from(context).inflate(
+                R.layout.layout_bottom_sheet_status,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
+
+            bottomSheetView.findViewById<ImageView>(R.id.closeButton).setOnClickListener {
+                    bottomSheetDialog?.dismiss()
+
+            }
+            bottomSheetDialog?.setContentView(bottomSheetView)
+            bottomSheetDialog?.show()
+        }
+
+
         return binding.root
     }
 

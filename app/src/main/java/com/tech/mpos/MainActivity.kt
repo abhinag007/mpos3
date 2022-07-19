@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
 }
 
 
+
 /*
 1) Update Account Details (Check Without animation)
 2) Update Business Details (Check Without Animation)
