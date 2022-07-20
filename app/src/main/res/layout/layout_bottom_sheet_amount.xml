@@ -33,7 +33,65 @@
 
     <com.google.android.material.slider.Slider
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        app:trackHeight="8dp"
+        android:valueFrom="0.0"
+        app:labelStyle="@style/Widget.MaterialComponents.Tooltip"
+        android:valueTo="1000.0"
+        app:trackColorActive="@color/secondary"
+        app:trackColorInactive="@color/baground"
+        app:tickVisible="true"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$0   "
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$250 "
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$500 "
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$750 "
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$1000"
+                android:textStyle="bold"
+                android:textSize="12sp"
+                android:textColor="@color/black"/>
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
