@@ -3,12 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/add_team.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/back_arrow.xml" value="0.1" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/calender_box_border.xml" value="0.1525" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/card_view.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/down_arrow.xml" value="0.136" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/home_icon.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_vector.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/recyclerview_corner.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/white_box.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_paying.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_signup.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_transaction_status.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_transactions.xml" value="0.27291666666666664" />
@@ -20,8 +27,12 @@
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/fragment_transaction_details.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/fragment_wallet_transaction.xml" value="0.22" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_amount.xml" value="0.367911479944675" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_status.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_transaction_period.xml" value="0.25" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/transaction.xml" value="0.25" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/menu/action_bar.xml" value="0.27291666666666664" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/menu/action_bar_back.xml" value="0.27291666666666664" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/menu/bottom_nav_menu.xml" value="0.27291666666666664" />
         <entry key="..\:/mpos/app/src/main/res/drawable/account_person.xml" value="0.1385" />
         <entry key="..\:/mpos/app/src/main/res/drawable/add_team.xml" value="0.1385" />
         <entry key="..\:/mpos/app/src/main/res/drawable/bell_icon.xml" value="0.1355" />

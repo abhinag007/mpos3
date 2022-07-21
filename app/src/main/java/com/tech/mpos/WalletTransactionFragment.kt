@@ -2,6 +2,7 @@ package com.tech.mpos
 
 import android.app.DatePickerDialog
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,12 +14,15 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.radiobutton.MaterialRadioButton
+import com.google.android.material.slider.Slider
 import com.tech.mpos.MainActivity.Companion.transactionData
 import com.tech.mpos.adapter_transaction_list.ListAdapter
 import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.databinding.FragmentWalletTransactionBinding
 import com.tech.mpos.transactionResponse.TransactionResponse
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_wallet_transaction.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,6 +46,10 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         var dayOfMonth2:Int = 0
         val calendar1 = GregorianCalendar()
         val calendar2 = GregorianCalendar()
+        var all:Boolean = true
+        var paid:Boolean = false
+        var cancelled:Boolean = false
+        var amount:Double = 0.0
     }
 
 
@@ -50,13 +58,12 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentWalletTransactionBinding.inflate(inflater,container,false)
-//        binding.uniqueIDTv.text = responseBody.body()?.data?.uid.toString()
-//        binding.textView13.text = "${transactionData.body()?.walletBalance} CAD"
         getTransaction()
         var check = false
+
         binding.settingIcon.setOnClickListener {
             check = !check
-            if(check){
+            if(check) {
                 binding.horzontalScroll.visibility = View.VISIBLE
             }
             else{
@@ -89,7 +96,6 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
                     Toast.makeText(context,"Invalid Date",Toast.LENGTH_SHORT).show()
                 }
                 else{
-                    Toast.makeText(context,"${dayOfMonth1} / ${month1} / ${year1} \n ${dayOfMonth2} / ${month2} / ${year2}",Toast.LENGTH_SHORT).show()
                     bottomSheetDialog?.dismiss()
                     getTransaction()
                 }
@@ -106,13 +112,16 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
                 bottomSheetDialog?.findViewById<MaterialButton>(R.id.from_date)?.text = "From"
                 bottomSheetDialog?.findViewById<MaterialButton>(R.id.to_date)?.isEnabled = false
 
+                getTransaction()
+                bottomSheetDialog?.dismiss()
+
             }
 
             bottomSheetDialog?.setContentView(bottomSheetView)
             bottomSheetDialog?.show()
         }
 
-        binding.statusBtn.setOnClickListener{
+        binding.statusBtn.setOnClickListener {
             val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
             val bottomSheetView = LayoutInflater.from(context).inflate(
                 R.layout.layout_bottom_sheet_status,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
@@ -121,6 +130,52 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
                     bottomSheetDialog?.dismiss()
 
             }
+            bottomSheetView.findViewById<MaterialRadioButton>(R.id.paid_radioBtn).setOnClickListener{
+                paid = true
+                all = false
+                cancelled = false
+
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.paid_radioBtn).isChecked = paid
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.cancelled_radioBtn).isChecked = cancelled
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.all_radioBtn).isChecked = all
+            }
+            bottomSheetView.findViewById<MaterialRadioButton>(R.id.cancelled_radioBtn).setOnClickListener{
+                paid = false
+                all = false
+                cancelled = true
+
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.paid_radioBtn).isChecked = paid
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.cancelled_radioBtn).isChecked = cancelled
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.all_radioBtn).isChecked = all
+            }
+            bottomSheetView.findViewById<MaterialRadioButton>(R.id.all_radioBtn).setOnClickListener{
+                paid = false
+                all = true
+                cancelled = false
+
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.paid_radioBtn).isChecked = paid
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.cancelled_radioBtn).isChecked = cancelled
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.all_radioBtn).isChecked = all
+            }
+
+            bottomSheetView.findViewById<MaterialButton>(R.id.apply_status_btn).setOnClickListener{
+                getTransaction()
+                bottomSheetDialog?.dismiss()
+            }
+
+            bottomSheetView.findViewById<TextView>(R.id.clear_status_btn).setOnClickListener{
+                paid = false
+                all = false
+                cancelled = false
+
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.paid_radioBtn).isChecked = paid
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.cancelled_radioBtn).isChecked = cancelled
+                bottomSheetView.findViewById<MaterialRadioButton>(R.id.all_radioBtn).isChecked = all
+
+                getTransaction()
+                bottomSheetDialog?.dismiss()
+            }
+
             bottomSheetDialog?.setContentView(bottomSheetView)
             bottomSheetDialog?.show()
         }
@@ -132,8 +187,20 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
 
             bottomSheetView.findViewById<ImageView>(R.id.closeButton).setOnClickListener {
                     bottomSheetDialog?.dismiss()
-
             }
+
+            bottomSheetView.findViewById<MaterialButton>(R.id.apply_amount_btn).setOnClickListener{
+                amount = bottomSheetView.findViewById<Slider>(R.id.amount_value).value.toDouble()
+                getTransaction()
+                bottomSheetDialog?.dismiss()
+            }
+
+            bottomSheetView.findViewById<TextView>(R.id.clear_amount_btn).setOnClickListener{
+                amount = 0.0
+                getTransaction()
+                bottomSheetDialog?.dismiss()
+            }
+
             bottomSheetDialog?.setContentView(bottomSheetView)
             bottomSheetDialog?.show()
         }
@@ -236,6 +303,7 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
             bottomSheetDialog?.findViewById<MaterialButton>(R.id.to_date)?.text = "To"
             return
         }
+
         calendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth)
         calendar2.set(Calendar.MONTH,month)
         calendar2.set(Calendar.YEAR,year)

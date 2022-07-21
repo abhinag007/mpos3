@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tech.mpos.loginResponse.LoginResponse
 import com.tech.mpos.transactionResponse.TransactionResponse
 import com.tech.mpos.userResponse.UserResponse
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Response
 import java.util.*
 
@@ -69,12 +70,30 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.home -> replaceFragment(homeFragment)
-                R.id.person -> replaceFragment(accountFragment)
-                R.id.paymb_button -> replaceFragment(paymentSetupFragment)
-                R.id.business_details -> replaceFragment(businessDetailsFragment)
+                R.id.home -> {
+                    appBar.visibility = View.VISIBLE
+                    replaceFragment(homeFragment)
+                }
+                R.id.person -> {
+                    appBar.visibility = View.VISIBLE
+                    replaceFragment(accountFragment)
+                }
+                R.id.paymb_button -> {
+                    appBar.visibility = View.VISIBLE
+                    replaceFragment(paymentSetupFragment)
+                }
+                R.id.business_details -> {
+                    appBar.visibility = View.VISIBLE
+                    replaceFragment(businessDetailsFragment)
+                }
                 R.id.wallet -> {
                     bottom.visibility = View.GONE
+                    toolbar.setNavigationIcon(R.drawable.back_arrow)
+                    toolbar.setNavigationOnClickListener {
+                        toolbar.navigationIcon = null
+                        bottom.visibility = View.VISIBLE
+                        replaceFragment(homeFragment)
+                    }
                     replaceFragment(walletTransactionFragment)
                 }
 //                R.id.wallet -> {
@@ -99,14 +118,3 @@ class MainActivity : AppCompatActivity() {
 
 }
 
-
-
-/*
-1) Update Account Details (Check Without animation)
-2) Update Business Details (Check Without Animation)
-3) Make dialog box enter cvv (check)
-4) Remove 0 balance proceed to payment (Check)
-5) Call payment api
-6) Do recyclerview show recent transaction
-7) Show transaction Details
- */

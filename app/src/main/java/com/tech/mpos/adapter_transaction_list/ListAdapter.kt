@@ -11,10 +11,14 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.tech.mpos.MainActivity
 import com.tech.mpos.R
+import com.tech.mpos.WalletTransactionFragment.Companion.all
+import com.tech.mpos.WalletTransactionFragment.Companion.amount
+import com.tech.mpos.WalletTransactionFragment.Companion.cancelled
 import com.tech.mpos.WalletTransactionFragment.Companion.dayOfMonth1
 import com.tech.mpos.WalletTransactionFragment.Companion.dayOfMonth2
 import com.tech.mpos.WalletTransactionFragment.Companion.month1
 import com.tech.mpos.WalletTransactionFragment.Companion.month2
+import com.tech.mpos.WalletTransactionFragment.Companion.paid
 import com.tech.mpos.WalletTransactionFragment.Companion.year1
 import com.tech.mpos.WalletTransactionFragment.Companion.year2
 import com.tech.mpos.transactionResponse.Transaction
@@ -54,22 +58,87 @@ class ListAdapter(
         if(year1 == 0 || ((date.monthValue>= month1 && date.dayOfMonth >= dayOfMonth1 && date.year >= year1)
             &&
             (date.monthValue <= month2 && date.dayOfMonth <= dayOfMonth2 && date.year >= year2))) {
-            holder.date.text = "${date.dayOfMonth} ${date.month}, ${date.format(dateTimeFormatter)}"
-//        holder.date.text = transaction.createdAt/*.substring(0,transaction.createdAt.indexOf('T'))*/
-            holder.transactionAmount.text = transaction.amount.toString()
 
-            if (transaction.status.equals("success")) {
-                holder.status.text =
-                    "Success From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
-            } else {
-                holder.status.text =
-                    "Failed From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
+            if (all || (!all && !paid && !cancelled)) {
+
+                if(amount == 0.0 || transaction.amount<=amount){
+
+                holder.date.text =
+                    "${date.dayOfMonth} ${date.month}, ${date.format(dateTimeFormatter)}"
+                holder.transactionAmount.text = transaction.amount.toString()
+
+                if (transaction.status.equals("success")) {
+                    holder.status.text =
+                        "Success From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
+                } else {
+                    holder.status.text =
+                        "Failed From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
+                }
+
+                holder.itemView.setOnClickListener {
+                    val intent = Intent(context, MainActivity::class.java)
+                    intent.putExtra("position", "$position")
+                    context?.startActivity(intent)
+                }
             }
+                else{
+                    holder.layout.visibility = View.GONE
+                }
+        }
+            else if(paid) {
+                if(amount == 0.0 || transaction.amount<=amount){
 
-            holder.itemView.setOnClickListener {
-                val intent = Intent(context, MainActivity::class.java)
-                intent.putExtra("position", "$position")
-                context?.startActivity(intent)
+                    if (transaction.status.equals("success")) {
+
+                    holder.date.text =
+                        "${date.dayOfMonth} ${date.month}, ${date.format(dateTimeFormatter)}"
+                    holder.transactionAmount.text = transaction.amount.toString()
+
+                    holder.status.text =
+                        "Success From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
+
+
+                    holder.itemView.setOnClickListener {
+                        val intent = Intent(context, MainActivity::class.java)
+                        intent.putExtra("position", "$position")
+                        context?.startActivity(intent)
+                    }
+
+                } else {
+                    holder.layout.visibility = View.GONE
+                }
+            }
+                else{
+                    holder.layout.visibility = View.GONE
+                }
+            }
+            else {
+                if(amount == 0.0 || transaction.amount<=amount){
+
+                    if (transaction.status.equals("failed")) {
+
+                    holder.date.text =
+                        "${date.dayOfMonth} ${date.month}, ${date.format(dateTimeFormatter)}"
+                    holder.transactionAmount.text = transaction.amount.toString()
+
+
+                    holder.status.text =
+                        "Failed From XXXX ${transaction.customer.cardNo.substring(transaction.customer.cardNo.length - 4)}"
+
+
+                    holder.itemView.setOnClickListener {
+                        val intent = Intent(context, MainActivity::class.java)
+                        intent.putExtra("position", "$position")
+                        context?.startActivity(intent)
+                    }
+
+                } else {
+                    holder.layout.visibility = View.GONE
+                }
+            }
+                else{
+                    holder.layout.visibility = View.GONE
+                }
             }
         }
         else{

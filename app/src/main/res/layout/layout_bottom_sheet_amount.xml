@@ -31,17 +31,17 @@
             android:textStyle="bold"
             android:textSize="18sp"/>
 
-    <com.google.android.material.slider.Slider
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:trackHeight="8dp"
-        android:valueFrom="0.0"
-        app:labelStyle="@style/Widget.MaterialComponents.Tooltip"
-        android:valueTo="1000.0"
-        app:trackColorActive="@color/secondary"
-        app:trackColorInactive="@color/baground"
-        app:tickVisible="true"
-            />
+        <com.google.android.material.slider.Slider
+            android:id="@+id/amount_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0.0"
+            android:valueTo="1000.0"
+            app:tickVisible="true"
+            app:trackColorActive="@color/secondary"
+            app:trackColorInactive="@color/baground"
+            app:trackHeight="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:orientation="horizontal"
@@ -100,6 +100,7 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/apply_amount_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Apply"
@@ -112,6 +113,7 @@
                 android:layout_gravity="center_horizontal"/>
 
             <TextView
+                android:id="@+id/clear_amount_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Clear"
