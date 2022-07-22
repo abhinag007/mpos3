@@ -9,14 +9,23 @@
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/card_view.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/down_arrow.xml" value="0.136" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/home_icon.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_intro_image2.xml" value="0.1335" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_intro_image3.xml" value="0.1335" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_intro_image4.xml" value="0.1335" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_introimage1.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_vector.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/recyclerview_corner.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/side_nav_bar.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/splash_screen_gradient.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/white_box.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/font-v26/poppins.xml" value="0.15104166666666666" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/font/poppins.xml" value="0.15" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_intro.xml" value="0.25" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_login.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_paying.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_signup.xml" value="0.27291666666666664" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_transaction_status.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/activity_transactions.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/dropdown_item.xml" value="0.12552083333333333" />
@@ -29,6 +38,7 @@
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_amount.xml" value="0.367911479944675" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_status.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/layout_bottom_sheet_transaction_period.xml" value="0.25" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/layout/slider_item.xml" value="0.33" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/layout/transaction.xml" value="0.25" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/menu/action_bar.xml" value="0.27291666666666664" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/menu/action_bar_back.xml" value="0.27291666666666664" />
