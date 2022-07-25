@@ -8,7 +8,7 @@
     android:background="@color/baground"
     android:paddingHorizontal="17dp"
     android:paddingBottom="10dp"
-    tools:context=".WalletTransactionFragment">
+    tools:context=".screens.Transactions.WalletTransactionFragment">
 
 
     <TextView

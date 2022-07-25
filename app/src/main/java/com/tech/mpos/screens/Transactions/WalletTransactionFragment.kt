@@ -1,8 +1,7 @@
-package com.tech.mpos
+package com.tech.mpos.screens.Transactions
 
 import android.app.DatePickerDialog
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,13 +15,15 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.radiobutton.MaterialRadioButton
 import com.google.android.material.slider.Slider
+import com.tech.mpos.DateSelected
+import com.tech.mpos.MainActivity
 import com.tech.mpos.MainActivity.Companion.transactionData
+import com.tech.mpos.R
 import com.tech.mpos.adapter_transaction_list.ListAdapter
 import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.databinding.FragmentWalletTransactionBinding
 import com.tech.mpos.transactionResponse.TransactionResponse
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_wallet_transaction.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -73,9 +74,13 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
 
 
         binding.periodBtn.setOnClickListener {
-            bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
+            bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,
+                R.style.BottomSheetDialogTheme
+            ) }
             val bottomSheetView = LayoutInflater.from(context).inflate(
-                R.layout.layout_bottom_sheet_transaction_period,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
+                R.layout.layout_bottom_sheet_transaction_period,binding.root.findViewById<LinearLayout>(
+                    R.id.bottomSheet
+                ))
 
             bottomSheetView.findViewById<MaterialButton>(R.id.from_date).setOnClickListener {
                 showDatePicker(true)
@@ -122,7 +127,9 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         }
 
         binding.statusBtn.setOnClickListener {
-            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
+            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,
+                R.style.BottomSheetDialogTheme
+            ) }
             val bottomSheetView = LayoutInflater.from(context).inflate(
                 R.layout.layout_bottom_sheet_status,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
 
@@ -181,7 +188,9 @@ class WalletTransactionFragment : Fragment(R.layout.fragment_wallet_transaction)
         }
 
         binding.amountBtn.setOnClickListener{
-            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,R.style.BottomSheetDialogTheme) }
+            val bottomSheetDialog = context?.let { it1 -> BottomSheetDialog(it1,
+                R.style.BottomSheetDialogTheme
+            ) }
             val bottomSheetView = LayoutInflater.from(context).inflate(
                 R.layout.layout_bottom_sheet_amount,binding.root.findViewById<LinearLayout>(R.id.bottomSheet))
 

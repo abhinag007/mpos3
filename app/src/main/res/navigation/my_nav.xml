@@ -16,7 +16,7 @@
         tools:layout="@layout/fragment_payment_setup" />
     <fragment
         android:id="@+id/walletTransactionFragment2"
-        android:name="com.tech.mpos.WalletTransactionFragment"
+        android:name="com.tech.mpos.screens.Transactions.WalletTransactionFragment"
         android:label="fragment_wallet_transaction"
         tools:layout="@layout/fragment_wallet_transaction" >
         <action

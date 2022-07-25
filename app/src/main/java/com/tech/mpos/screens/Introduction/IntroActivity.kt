@@ -1,4 +1,4 @@
-package com.tech.mpos
+package com.tech.mpos.screens.Introduction
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.tech.mpos.LoginActivity
+import com.tech.mpos.R
 
 class IntroActivity : AppCompatActivity() {
 
@@ -60,7 +62,6 @@ class IntroActivity : AppCompatActivity() {
         // on below line we are adding data to our list
         sliderList.add(
             SliderData(
-                "Python",
                 "Get Payments just by\n" +
                         "Tap of your Mobile",
                 R.drawable.ic_introimage1
@@ -69,7 +70,6 @@ class IntroActivity : AppCompatActivity() {
 
         sliderList.add(
             SliderData(
-                "Java",
                 "Share Payment Link\n" +
                         "to get your Payments",
                 R.drawable.ic_intro_image2
@@ -78,7 +78,6 @@ class IntroActivity : AppCompatActivity() {
 
         sliderList.add(
             SliderData(
-                "C++",
                 "Invite Team Members\n" +
                         "to Ease the Payments",
                 R.drawable.ic_intro_image3
@@ -87,7 +86,6 @@ class IntroActivity : AppCompatActivity() {
 
         sliderList.add(
             SliderData(
-                "C++",
                 "Easy and Quick Setup\n" +
                         "of Account Details",
                 R.drawable.ic_intro_image4

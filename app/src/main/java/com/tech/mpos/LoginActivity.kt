@@ -14,7 +14,7 @@ import com.tech.mpos.apiServices.ApiInterface
 import com.tech.mpos.apiServices.RemoteDataSource
 import com.tech.mpos.models.SignInBody
 import com.tech.mpos.loginResponse.LoginResponse
-import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login2.*
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login2)
 
         val email = findViewById<EditText>(R.id.email_phone_et)
         val password = findViewById<EditText>(R.id.password_et)

@@ -25,7 +25,13 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".IntroActivity"
+            android:name=".LoginActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Mpos.NoActionBar" />
+        <activity
+            android:name=".screens.Introduction.IntroActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
@@ -73,12 +79,6 @@
             android:name=".SignupActivity"
             android:configChanges="orientation"
             android:exported="true"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.Mpos.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
-            android:configChanges="orientation"
-            android:exported="false"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Mpos.NoActionBar" />
         <activity

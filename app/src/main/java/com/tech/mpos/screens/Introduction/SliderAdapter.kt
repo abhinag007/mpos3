@@ -1,4 +1,4 @@
-package com.tech.mpos
+package com.tech.mpos.screens.Introduction
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.viewpager.widget.PagerAdapter
+import com.tech.mpos.R
 
 class SliderAdapter(
     val context: Context,
