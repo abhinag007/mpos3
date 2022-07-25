@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 
@@ -45,12 +44,14 @@ class IntroActivity : AppCompatActivity() {
             // on below line we are opening a new activity
             val i = Intent(this@IntroActivity, LoginActivity::class.java)
             startActivity(i)
+            finish()
         }
 
         startBtn.setOnClickListener {
             // on below line we are opening a new activity
             val i = Intent(this@IntroActivity, LoginActivity::class.java)
             startActivity(i)
+            finish()
         }
 
         // on below line we are initializing our slider list.
@@ -101,6 +102,11 @@ class IntroActivity : AppCompatActivity() {
         // for our view pager on below line.
         viewPager.adapter = sliderAdapter
 
+
+        nextBtn.setOnClickListener {
+            viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
+
+        }
         // on below line we are adding page change
         // listener for our view pager.
         viewPager.addOnPageChangeListener(viewListener)
@@ -117,8 +123,8 @@ class IntroActivity : AppCompatActivity() {
         }
 
 
-
         override fun onPageSelected(position: Int) {
+
             if (position == 0) {
                 skipBtn.visibility = View.VISIBLE
                 nextBtn.visibility = View.VISIBLE
