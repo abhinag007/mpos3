@@ -44,14 +44,14 @@ class IntroActivity : AppCompatActivity() {
         // on below line we are adding click listener for our skip button
         skipBtn.setOnClickListener {
             // on below line we are opening a new activity
-            val i = Intent(this@IntroActivity, LoginActivity::class.java)
+            val i = Intent(this@IntroActivity, com.tech.mpos.screens.Login.LoginActivity::class.java)
             startActivity(i)
             finish()
         }
 
         startBtn.setOnClickListener {
             // on below line we are opening a new activity
-            val i = Intent(this@IntroActivity, LoginActivity::class.java)
+            val i = Intent(this@IntroActivity, com.tech.mpos.screens.Login.LoginActivity::class.java)
             startActivity(i)
             finish()
         }

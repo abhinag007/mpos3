@@ -10,6 +10,7 @@
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/calender_box_border.xml" value="0.1525" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/card_view.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/down_arrow.xml" value="0.136" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/edit_text_border.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ellipse.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ellipse_10.xml" value="0.16" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/home_icon.xml" value="0.156" />
@@ -22,6 +23,8 @@
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_vector.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/ic_wallet.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/link_small.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/otp_box.xml" value="0.156" />
+        <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/paying_curve_shape_green.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/paymb_button.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/person_small.xml" value="0.156" />
         <entry key="..\:/androidXml/mpos/app/src/main/res/drawable/recyclerview_corner.xml" value="0.156" />

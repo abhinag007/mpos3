@@ -1,6 +1,7 @@
 package com.tech.mpos.screens.Login
 
 import android.R.id
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.Html
@@ -11,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
+import com.tech.mpos.LoginActivity
 import com.tech.mpos.R
+import com.tech.mpos.screens.Introduction.IntroActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -51,8 +54,12 @@ class LoginActivity : AppCompatActivity() {
         })
 
         otpButton.setOnClickListener {
-            constraintBox.visibility = View.GONE
-            otpBox.visibility = View.VISIBLE
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+
+//            constraintBox.visibility = View.GONE
+//            otpBox.visibility = View.VISIBLE
 
         }
         val sourceString = "Enter 4 digt OTP sent on " + "<b>" + "xxxxxxxx7905" + "</b> "
