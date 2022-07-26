@@ -34,15 +34,15 @@
             android:name=".screens.Introduction.IntroActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreen"
+            android:name=".screens.SplashScreen.SplashScreen"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Mpos.greenActionBar">
-            <intent-filter>
+          <!--  <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <!--
   <activity
@@ -87,6 +87,19 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.Mpos.greenActionBar" />
+        <activity android:name=".screens.Login.LoginActivity"
+            android:configChanges="orientation"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Mpos.NoActionBar">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

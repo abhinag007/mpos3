@@ -82,25 +82,6 @@ class LoginActivity : AppCompatActivity() {
                             FetchTransactionData().getUserData(this@LoginActivity)
                         }.invoke()
                     }
-                    System.out.println("HI")
-                   /* GlobalScope.launch(Dispatchers.IO) {
-                            val status = async { FetchTransactionData().getTransactionData() }
-                            Log.d("status under: ", status.await())
-                            */
-
-                /*if (status.isActive){
-                                mProgressBar.dismiss()
-                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                startActivity(intent)
-                                finish()
-                            }*//*
-                    }*/
-//                    Log.d("status: ", transactionData.body()?.walletBalance.toString())
-//                        mProgressBar.dismiss()
-//                        val intent = Intent(this@LoginActivity, MainActivity::class.java)
-//                        startActivity(intent)
-//                        finish()
-
 
                 } else {
                     mProgress.dismiss()
